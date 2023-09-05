@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16 Types Voresonality test</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit"/>
+    <!--
+        Used my own style as to not cramp anyone else's' :) - Snapps
+        Everything still "works" with the other style but it does look jank.
+     -->
+    <link rel="stylesheet" href="styles/snappsStyle.css"/>
+
+    <!-- Discord Preview -->
+    <meta property="og:site_name" content="Vore Personality Test">
+    <meta property="og:url" content="https://tastytales.github.io/">
+    <meta property="og:title" content="Vore Personality Test">
+    <meta property="og:description" content="Find out your Predator or Prey Personality Indicator!">
+    <meta property="og:type" content="website">
+    <meta property="og:image" itemprop="image"
+          content="https://cdn.discordapp.com/attachments/759881339800911874/981737005115400232/unknown.png">
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Vore Personality Test"/>
+    <meta name="twitter:description" content="Find out your Predator or Prey Personality Indicator"/>
+    <meta name="twitter:image"
+          content="https://cdn.discordapp.com/attachments/759881339800911874/981737005115400232/unknown.png"/>
+
+</head>
+
+<body>
+<div id='main-menu'>
+    <h1 id='title'>丸吞爱好性格特质测试</h1>
+    <h3 id='subtitle'>找到你的丸吞倾向特质！</h3>
+    <p>
+        此为个人翻译版，非原创，非转载，全文根据个人主观臆断进行了大量魔改和增删改操作，如果您对本测试感到疑惑甚至质疑，请勿骂街，直接去原版即可。
+        <br>
+        原版测试地址：<a href="https://tastytales.github.io/">16 Types Voresonality Test</a>
+    </p>
+    <p>
+        本测试由
+        <a href="https://aryion.com/g4/user/TastyTales" target="_blank">Tasty Tales</a>
+        和
+        <a href="https://aryion.com/g4/user/Smuxray">Smuxray</a>
+        原创设计，感谢作者开源内容，修改条件源自
+        <a href="https://github.com/TastyTales/tastytales.github.io" target="_blank">Github仓库地址</a>
+        更多情况和介绍请参考原文，此处不再赘述。
+        <br>
+        原文地址：<a href="https://aryion.com/forum/viewtopic.php?f=18&t=45206">Vore Psychology: The Smux-Tales
+        Predator/Prey Type Indicator</a>
+    </p>
+    <p>
+        本测试基于
+        <a href="https://baike.baidu.com/item/迈尔斯布里格斯类型指标/854525" target="_blank">MBTI (链接指向百度百科)</a>
+        进行设计，旨在通过测试定位角色在我们总结的16个丸吞性格特质指标中的位置，总结角色是一个什么样的捕食者或猎物。
+    </p>
+    <p>
+        你可以通过代入你所设定的，或者感兴趣的角色来回答这些问题，以得出你的角色的丸吞倾向特质集合；当然，你也可以选择以自己的身份进行答题，看看你的成份是什么。
+    </p>
+    <p>
+        请注意：这个测试被创造的目的是为了娱乐和讨论，目前仍然处于开发阶段，你目前看到的版本是我的个人翻译版本，基于2022年8月12日更新的版本，截止2023年9月4日，此原版为最新版。
+    </p>
+    <br>
+    <p>
+        再次警告：本测试进行了大量魔改，测试的题目与结果都与原版存在大量偏差，如果不满意，请随时离开，勿Cue。
+    </p>
+
+    <p>请选择进行测试的角色的身份</p>
+    <div class="pick-button-container">
+        <button class="pick-pred" id='pred-button'>捕食者</button>
+        <button class="pick-wprey" id='wprey-button'>自愿型猎物</button>
+        <button class="pick-uprey" id='uprey-button'>非自愿型猎物</button>
+    </div>
+</div>
+<div id='test-menu' style='display:none;'>
+    <div id="progress-bar">
+        <div id="progress-bar-full">
+
+        </div>
+    </div>
+    <div id="question-containter">
+        <div class="test-options">
+            <button class="navbuttons" id='back-button' title="上一题">◀</button>
+        </div>
+        <h1 id="question-header"></h1>
+        <div class="test-options">
+            <button class="navbuttons" id="reset-button" title="重置全部试题">↻</button>
+        </div>
+    </div>
+    <p id="question-text"></p>
+    <div class="testbuttons-container">
+        <button class="testbuttons" id='strdis-button'>强烈反对</button>
+        <button class="testbuttons" id="dis-button">不太一样</button>
+        <button class="testbuttons" id="na-button">无法抉择</button>
+        <button class="testbuttons" id="agr-button">大差不差</button>
+        <button class="testbuttons" id="stragr-button">非常同意</button>
+    </div>
+</div>
+<div id='results-menu' style='display:none;'>
+    <div id="results-show">
+        <div id="results-desc">
+            <p id="results-desc-header-type"></p>
+            <p id="results-desc-header-title"></p>
+            <p id="results-desc-header-type-desc"></p>
+            <p id="results-desc-header-quote"></p>
+            <p id="results-desc-text"></p>
+            <p id="results-desc-score-text"></p>
+
+        </div>
+        <div id="results-scores">
+            <table id="scores-table">
+                <caption>分数</caption>
+                <tr>
+                    <td>自我 - Individual</td>
+                    <td id="score-individual">0</td>
+                    <td id="score-shared">0</td>
+                    <td>Shared - 共享</td>
+                </tr>
+                <tr>
+                    <td>本能 - Visceral</td>
+                    <td id="score-visceral">0</td>
+                    <td id="score-emotional">0</td>
+                    <td>Emotional - 情感</td>
+                </tr>
+                <tr>
+                    <td>主动 - Active</td>
+                    <td id="score-active">0</td>
+                    <td id="score-passive">0</td>
+                    <td>Passive - 被动</td>
+                </tr>
+                <tr>
+                    <td>欲望 - SeXual</td>
+                    <td id="score-sexual">0</td>
+                    <td id="score-sensual">0</td>
+                    <td>SeNsual - 感官</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="results-buttons">
+        <a id="results-share"><p>下载你的结果</p></a>
+        <button class="reset-button" id="reset-button-2">重置测试</button>
+    </div>
+
+</div>
+
+
+<footer>
+    <div>
+        <i>丸吞爱好性格特质测试&nbsp;如果您对本测试感到疑惑甚至质疑，请前往原试题！原版测试地址：<a
+                href="https://tastytales.github.io/">16 Types Voresonality Test</a></i>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script src="bluebird.min.js"></script>
+<script src="download.js"></script>
+
+</body>
+
+</html>
