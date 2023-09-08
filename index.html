@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>16 Types Voresonality test</title>
+    <title>16种丸吞爱好性格特质测试</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit"/>
     <!--
         Used my own style as to not cramp anyone else's' :) - Snapps
@@ -34,21 +34,15 @@
     <h1 id='title'>丸吞爱好性格特质测试</h1>
     <h3 id='subtitle'>找到你的丸吞倾向特质！</h3>
     <p>
-        此为个人翻译版，非原创，非转载，全文根据个人主观臆断进行了大量魔改和增删改操作，如果您对本测试感到疑惑甚至质疑，请勿骂街，直接去原版即可。
+        此为个人翻译版，非原创，非转载，全文根据个人主观臆断进行了大量魔改和增删改操作。
+        <br>
+        如果您对测试内容感到疑惑甚至质疑，请勿骂街，直接去原版即可。
         <br>
         原版测试地址：<a href="https://tastytales.github.io/">16 Types Voresonality Test</a>
     </p>
     <p>
-        本测试由
-        <a href="https://aryion.com/g4/user/TastyTales" target="_blank">Tasty Tales</a>
-        和
-        <a href="https://aryion.com/g4/user/Smuxray">Smuxray</a>
-        原创设计，感谢作者开源内容，修改条件源自
-        <a href="https://github.com/TastyTales/tastytales.github.io" target="_blank">Github仓库地址</a>
-        更多情况和介绍请参考原文，此处不再赘述。
-        <br>
-        原文地址：<a href="https://aryion.com/forum/viewtopic.php?f=18&t=45206">Vore Psychology: The Smux-Tales
-        Predator/Prey Type Indicator</a>
+        感谢作者开源内容，
+        <a href="https://aryion.com/forum/viewtopic.php?f=18&t=45206" target="_blank">点此查看原作者发布内容</a> 。
     </p>
     <p>
         本测试基于
@@ -59,11 +53,11 @@
         你可以通过代入你所设定的，或者感兴趣的角色来回答这些问题，以得出你的角色的丸吞倾向特质集合；当然，你也可以选择以自己的身份进行答题，看看你的成份是什么。
     </p>
     <p>
-        请注意：这个测试被创造的目的是为了娱乐和讨论，目前仍然处于开发阶段，你目前看到的版本是我的个人翻译版本，基于2022年8月12日更新的版本，截止2023年9月4日，此原版为最新版。
+        请注意：这个测试被创造的目的是为了娱乐，当前版本是我的个人翻译版本，是基于原版2022年8月12日更新的副本，截止2023年9月4日，此版为最新版。
     </p>
     <br>
     <p>
-        再次警告：本测试进行了大量魔改，测试的题目与结果都与原版存在大量偏差，如果不满意，请随时离开，勿Cue。
+        再次警告：本测试进行了大量魔改，测试的题目与结果都与原版存在大量偏差，如果不满意，请随时离开，勿Cue！
     </p>
 
     <p>请选择进行测试的角色的身份</p>
@@ -105,44 +99,20 @@
             <p id="results-desc-header-type-desc"></p>
             <p id="results-desc-header-quote"></p>
             <p id="results-desc-text"></p>
-            <p id="results-desc-score-text"></p>
-
+            <p id="results-summarize-text"></p>
         </div>
         <div id="results-scores">
-            <table id="scores-table">
-                <caption>分数</caption>
-                <tr>
-                    <td>自我 - Individual</td>
-                    <td id="score-individual">0</td>
-                    <td id="score-shared">0</td>
-                    <td>Shared - 共享</td>
-                </tr>
-                <tr>
-                    <td>本能 - Visceral</td>
-                    <td id="score-visceral">0</td>
-                    <td id="score-emotional">0</td>
-                    <td>Emotional - 情感</td>
-                </tr>
-                <tr>
-                    <td>主动 - Active</td>
-                    <td id="score-active">0</td>
-                    <td id="score-passive">0</td>
-                    <td>Passive - 被动</td>
-                </tr>
-                <tr>
-                    <td>欲望 - SeXual</td>
-                    <td id="score-sexual">0</td>
-                    <td id="score-sensual">0</td>
-                    <td>SeNsual - 感官</td>
-                </tr>
-            </table>
+            <div id="main" style="width: 270px;height: 270px"></div>
+
+            <div id="results-desc-score-text">
+
+            </div>
         </div>
     </div>
     <div id="results-buttons">
-        <a id="results-share"><p>下载你的结果</p></a>
+        <a id="results-share"><p>将结果下载为图片</p></a>
         <button class="reset-button" id="reset-button-2">重置测试</button>
     </div>
-
 </div>
 
 
@@ -153,11 +123,15 @@
     </div>
 </footer>
 
-<script src="script.js"></script>
-<script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
-<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-<script src="bluebird.min.js"></script>
-<script src="download.js"></script>
+<script src="script/echarts.min.js"></script>
+<script src="script/script.js"></script>
+<script src="script/jquery-1.8.2.min.js"></script>
+<script src="script/html2canvas.js"></script>
+<script src="script/bluebird.min.js"></script>
+<script src="script/download.js"></script>
+<script>
+
+</script>
 
 </body>
 

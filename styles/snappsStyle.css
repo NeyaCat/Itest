@@ -8,7 +8,7 @@
     --menu: rgb(221, 216, 202);
     --pred: rgb(224, 172, 95);
     --wPrey: rgb(137, 226, 144);
-    --uPrey: rgb(199, 130, 226);
+    --uPrey: rgb(230, 169, 255);
     /* Score Colors */
     --indShaMain: #c6be4a;
     --indShaAlt: #772;
@@ -349,24 +349,63 @@ table tr:last-of-type {
 /* Results Menu Components */
 
 #results-scores {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
     width: 100%;
     background: #444;
-    border-top: solid .1em #fff;
+    border-top: solid .1em var(--currentTheme);
     padding-top: .5em;
 }
-
 #results-desc {
     background: #444;
-    overflow-y: scroll;
+    /*overflow-y: scroll;*/
     width: 50%;
-    height: 45vh;
-    padding-bottom: 1em;
+    /*height: 45vh;*/
+    /*padding-bottom: 1em;*/
+}
+
+#results-desc-score-text {
+    padding: 2em 1em;
+    overflow-y: scroll;
+    height: 20vh;
+}
+
+.result-desc-TITLE {
+    text-align: center;
+    margin-bottom: .5em;
+}
+
+.result-desc-HEAD {
+    text-indent: 2em;
+    margin-bottom: 1em;
+}
+
+
+@media screen and (max-width: 800px) {
+    /* 在768px以下的屏幕尺寸应用以下样式 */
+    #results-scores {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        height: 40vh;
+        overflow-y: scroll;
+    }
+
+    #results-desc-score-text {
+        overflow-y: unset;
+        height: 20vh;
+    }
 }
 
 #results-desc > * {
     padding: .5em 1em;
     margin: 0;
     text-align: center;
+    background: #666;
 }
 
 #results-desc-header-type {
@@ -377,16 +416,13 @@ table tr:last-of-type {
 }
 
 #results-desc-header-title {
-    text-decoration: underline;
+    /*text-decoration: underline;*/
     font-size: 1.3em;
+    color: var(--currentTheme);
 }
 
 #results-desc-header-quote {
     font-style: italic;
-}
-
-#results-desc-header-title, #results-desc-text, #results-desc-header-type-desc, #results-desc-header-quote {
-    background: #666;
 }
 
 
